@@ -42,10 +42,9 @@ public:
             cout << "invalid index parmeter" << endl;
             return;
         }
+        T pervious = this->arr[theIndex];
         this->arr[theIndex] = theNumber;
-        T pervious = this->tree[theIndex];
-        this->tree[theIndex] = theNumber;
-        int pos = theIndex + lowbit(theIndex);
+        int pos = theIndex;
         while (pos <= this->arrSize)
         {
             this->tree[pos] -= pervious;
